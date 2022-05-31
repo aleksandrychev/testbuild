@@ -1,6 +1,7 @@
 {
   "name": "Example",
   "type": "policy-set",
+  "git": true,
   "description": "Example description",
   "build": [
     {
