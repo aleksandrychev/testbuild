@@ -65,21 +65,6 @@
       "dependencies": ["autorun"],
       "added_by": "cfbs add",
       "steps": ["copy ./compliance-report-imports.cf services/autorun/"]
-    },
-    {
-      "name": "default-encrypt-method-sha512",
-      "version": "1.0.3",
-      "description": "Sets the default password hashing algorithm to SHA-512 (encrypt_method in /etc/login.defs)",
-      "tags": ["supported", "security"],
-      "repo": "https://github.com/nickanderson/cfengine-security-hardening",
-      "by": "https://github.com/nickanderson",
-      "commit": "124b01041a3d45010ac20912338795e81e2a06fe",
-      "subdirectory": "default-encrypt-method-sha512",
-      "added_by": "cfbs add",
-      "steps": [
-        "json cfbs/def.json def.json",
-        "copy policy/default-encrypt-method-sha512.cf services/security-hardening/default-encrypt-method-sha512/default-encrypt-method-sha512.cf"
-      ]
     }
   ],
   "git": true
