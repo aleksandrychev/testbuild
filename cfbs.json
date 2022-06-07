@@ -9,11 +9,10 @@
       "tags": ["supported", "base"],
       "repo": "https://github.com/cfengine/masterfiles",
       "by": "https://github.com/cfengine",
-      "version": "3.18.1-1",
-      "commit": "b6e9eacc65c797f4c2b4a59056293636c320d0c9",
+      "version": "0.3.0",
+      "commit": "f3a8f65e77428a6ab9d62c34057a7ace6ae54ce9",
       "added_by": "cfbs add",
-      "steps": ["run ./prepare.sh -y", "copy ./ ./"],
-      "subdirectory": ""
+      "steps": ["run ./prepare.sh -y", "copy ./ ./"]
     },
     {
       "name": "autorun",
@@ -51,6 +50,31 @@
       "dependencies": ["autorun"],
       "added_by": "cfbs add",
       "steps": ["copy ./compliance-report-imports.cf services/autorun/"]
+    },
+    {
+      "name": "every-minute",
+      "description": "Make policy fetching, evaluation, and reporting happen every minute",
+      "tags": ["management", "experimental"],
+      "repo": "https://github.com/cfengine/modules",
+      "by": "https://github.com/olehermanse",
+      "version": "1.0.0-1",
+      "commit": "74b6776ca4e120285f9c44e68ccf79eef84accfd",
+      "subdirectory": "management/every-minute",
+      "added_by": "demo",
+      "steps": ["json def.json def.json"]
+    },
+    {
+      "name": "demo",
+      "version": "1.0.0",
+      "description": "Enables convenient and insecure settings for demoing CFEngine",
+      "tags": ["management", "experimental"],
+      "repo": "https://github.com/cfengine/modules",
+      "by": "https://github.com/olehermanse",
+      "commit": "05bf5e5b1c014018a7b93a524e035c1a21bcffa4",
+      "subdirectory": "management/demo",
+      "dependencies": ["autorun", "every-minute"],
+      "added_by": "cfbs add",
+      "steps": ["json def.json def.json"]
     }
   ],
   "git": true
