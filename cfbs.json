@@ -84,11 +84,11 @@
     },
     {
       "name": "all-packages-upgraded",
+      "version": "0.0.1",
       "description": "This module ensures that the package manager data is updated and all upgradeable packages are upgraded",
       "tags": ["supported", "security", "compliance"],
       "repo": "https://github.com/craigcomstock/cfengine-security-hardening",
       "by": "https://github.com/craigcomstock",
-      "version": "0.0.1",
       "commit": "b6b7ea9c28d7ae7514bfedf4c564a3eb23bf1798",
       "subdirectory": "all-packages-upgraded",
       "dependencies": ["autorun"],
