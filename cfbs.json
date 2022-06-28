@@ -81,6 +81,21 @@
       "subdirectory": "management/autorun",
       "added_by": "all-packages-upgraded",
       "steps": ["json def.json def.json"]
+    },
+    {
+      "name": "cve-2021-3156-sudo",
+      "version": "0.0.1",
+      "description": "This module inventories and remediates CVE-2021-3156, a heap overflow in sudo that allows privilege escalation.",
+      "tags": ["supported", "security", "cve", "sudo"],
+      "repo": "https://github.com/nickanderson/cfengine-security-hardening",
+      "by": "https://github.com/nickanderson",
+      "commit": "029ec4eac0d3d9b3bf7c8dc361db71f4796fc101",
+      "subdirectory": "./cves/cve-2021-3156-sudo/",
+      "added_by": "cfbs add",
+      "steps": [
+        "copy ./cve-2021-3156-sudo.cf services/security-hardening/cves/cve-2021-3156-sudo/",
+        "json cfbs/def.json def.json"
+      ]
     }
   ],
   "git": true
