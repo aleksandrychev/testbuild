@@ -96,6 +96,18 @@
       "subdirectory": "management/every-minute",
       "added_by": "cfbs add",
       "steps": ["json def.json def.json"]
+    },
+    {
+      "name": "masterfiles",
+      "version": "3.18.2",
+      "description": "Official CFEngine Masterfiles Policy Framework (MPF)",
+      "tags": ["supported", "base"],
+      "repo": "https://github.com/cfengine/masterfiles",
+      "by": "https://github.com/cfengine",
+      "commit": "a87b7fea6f7a88808b327730a4ba784a3dc664eb",
+      "subdirectory": "",
+      "added_by": "cfbs add",
+      "steps": ["run ./prepare.sh -y", "copy ./ ./"]
     }
   ],
   "git": true
