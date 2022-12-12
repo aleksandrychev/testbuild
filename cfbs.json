@@ -5,12 +5,12 @@
   "build": [
     {
       "name": "compliance-report-imports",
-      "version": "0.0.7",
-      "description": "Keep compliance report definitions up to date",
+      "version": "0.0.8",
+      "description": "Used by other modules to import compliance reports to Mission Portal.",
       "tags": ["experimental", "cfengine-enterprise"],
       "repo": "https://github.com/nickanderson/cfengine-security-hardening",
       "by": "https://github.com/nickanderson",
-      "commit": "14fafaf0a4e118830f26e062827979fcc6be5cf4",
+      "commit": "06f0894b662befbba4e775884f21cfe8573c32d6",
       "subdirectory": "./compliance-report-imports",
       "dependencies": ["autorun"],
       "added_by": "cfbs add",
