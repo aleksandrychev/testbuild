@@ -4,19 +4,6 @@
   "description": "test",
   "build": [
     {
-      "name": "compliance-report-imports",
-      "version": "0.0.8",
-      "description": "Used by other modules to import compliance reports to Mission Portal.",
-      "tags": ["experimental", "cfengine-enterprise"],
-      "repo": "https://github.com/nickanderson/cfengine-security-hardening",
-      "by": "https://github.com/nickanderson",
-      "commit": "06f0894b662befbba4e775884f21cfe8573c32d6",
-      "subdirectory": "./compliance-report-imports",
-      "dependencies": ["autorun"],
-      "added_by": "cfbs add",
-      "steps": ["copy ./compliance-report-imports.cf services/autorun/"]
-    },
-    {
       "name": "inventory-etc-hosts",
       "version": "0.1.3",
       "description": "Inventory entries from /etc/hosts",
