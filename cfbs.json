@@ -71,19 +71,6 @@
       "subdirectory": "",
       "added_by": "cfbs add",
       "steps": ["run ./prepare.sh -y", "copy ./ ./"]
-    },
-    {
-      "name": "tmp-nosuid",
-      "version": "0.0.2",
-      "description": "Makes sure /tmp is mounted with the 'nosuid' option.",
-      "tags": ["supported", "security", "compliance", "tmp"],
-      "repo": "https://github.com/vpodzime/cfengine-security-hardening",
-      "by": "https://github.com/vpodzime",
-      "commit": "5be7c3ef332138b5717231d289bda59449b66d5c",
-      "subdirectory": "tmp-nosuid",
-      "dependencies": ["autorun"],
-      "added_by": "cfbs add",
-      "steps": ["copy ./tmp_nosuid.cf services/autorun/tmp_nosuid.cf"]
     }
   ],
   "git": true
