@@ -1,15 +1,16 @@
 {
   "name": "test",
-  "type": "policy-set",
   "description": "test",
+  "type": "policy-set",
+  "git": true,
   "build": [
     {
       "name": "inventory-etc-hosts",
-      "version": "0.1.3",
       "description": "Inventory entries from /etc/hosts",
       "tags": ["supported", "inventory"],
       "repo": "https://github.com/nickanderson/cfengine-inventory-etc-hosts",
       "by": "https://github.com/nickanderson",
+      "version": "0.1.3",
       "commit": "c4cac4bfa0f2c0a6caf83517dcaaaf17e70808a0",
       "subdirectory": "",
       "added_by": "cfbs add",
@@ -20,13 +21,13 @@
     },
     {
       "name": "compliance-report-os-is-vendor-supported",
-      "version": "0.0.3",
       "description": "Compliance report definition for checking if the current OS version is supported by the vendor.",
       "tags": ["experimental", "compliance-report", "cfengine-enterprise"],
       "repo": "https://github.com/nickanderson/cfengine-security-hardening",
       "by": "https://github.com/nickanderson",
-      "commit": "1b9d2fab3d3fd43fae3d34f864c8cfa4574b01b4",
-      "subdirectory": "./compliance-report-os-is-vendor-supported",
+      "version": "0.0.5",
+      "commit": "45f062b3e1efe1747d8d331c574711e53a13dc28",
+      "subdirectory": "compliance-report-os-is-vendor-supported",
       "dependencies": ["compliance-report-imports"],
       "added_by": "cfbs add",
       "steps": [
@@ -35,11 +36,11 @@
     },
     {
       "name": "autorun",
-      "version": "1.0.1",
       "description": "Enable autorun functionality",
       "tags": ["supported", "management"],
       "repo": "https://github.com/cfengine/modules",
       "by": "https://github.com/olehermanse",
+      "version": "1.0.1",
       "commit": "c3b7329b240cf7ad062a0a64ee8b607af2cb912a",
       "subdirectory": "management/autorun",
       "added_by": "cfbs add",
@@ -47,11 +48,11 @@
     },
     {
       "name": "compliance-report-lynis",
-      "version": "0.0.2",
       "description": "Compliance report with Lynis checks",
       "tags": ["experimental", "security", "compliance"],
       "repo": "https://github.com/nickanderson/cfengine-lynis",
       "by": "https://github.com/nickanderson/",
+      "version": "0.0.2",
       "commit": "60ad7321d6b5e30606830d3228812fe3f77c4fa8",
       "subdirectory": "./compliance-reports",
       "dependencies": ["compliance-report-imports", "lynis"],
@@ -62,11 +63,11 @@
     },
     {
       "name": "masterfiles",
-      "version": "3.18.3",
       "description": "Official CFEngine Masterfiles Policy Framework (MPF).",
       "tags": ["supported", "base"],
       "repo": "https://github.com/cfengine/masterfiles",
       "by": "https://github.com/cfengine",
+      "version": "3.18.3",
       "commit": "c92106b72ac9a9f12e412df7ecba1ea22bcb373a",
       "subdirectory": "",
       "added_by": "cfbs add",
@@ -74,11 +75,11 @@
     },
     {
       "name": "inventory-sudoers",
-      "version": "1.0.2",
       "description": "Adds reporting data (inventory) for users with sudo access.",
       "tags": ["supported", "inventory", "security", "sudo"],
       "repo": "https://github.com/nickanderson/cfengine-inventory-sudoers",
       "by": "https://github.com/nickanderson",
+      "version": "1.0.2",
       "commit": "ba9768f0e09914e41dae95fbf81caed90c1e6ed4",
       "subdirectory": "",
       "added_by": "cfbs add",
@@ -89,12 +90,20 @@
     },
     {
       "name": "delete-files",
-      "version": "0.0.1",
       "description": "Allows you to specify a list of files you want deleted on hosts in your infrastructure. When this module is deployed as part of your policy set, every time CFEngine runs, it will check if those files exist, and delete them if they do.",
       "tags": ["management"],
       "repo": "https://github.com/nickanderson/cfengine-delete-files",
       "by": "https://github.com/nickanderson",
+      "version": "0.0.1",
       "commit": "68ce93f3148992f5b3c87fb1cd91cf3f82fbbfa8",
+      "subdirectory": "",
+      "added_by": "cfbs add",
+      "steps": [
+        "copy delete-files.cf services/cfbs/modules/delete-files/delete-files.cf",
+        "input delete-files/input.json def.json",
+        "bundles delete_files:delete_files",
+        "policy_files services/cfbs/modules/delete-files/delete-files.cf"
+      ],
       "input": [
         {
           "type": "list",
@@ -119,16 +128,7 @@
           ],
           "while": "Specify another file you want deleted on your hosts?"
         }
-      ],
-      "subdirectory": "",
-      "added_by": "cfbs add",
-      "steps": [
-        "copy delete-files.cf services/cfbs/modules/delete-files/delete-files.cf",
-        "input delete-files/input.json def.json",
-        "bundles delete_files:delete_files",
-        "policy_files services/cfbs/modules/delete-files/delete-files.cf"
       ]
     }
-  ],
-  "git": true
+  ]
 }
